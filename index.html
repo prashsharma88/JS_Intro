@@ -14,11 +14,21 @@
 <body>
     <header>
         <h1 id="pageTitle">
-            JS Refresher: Important Concepts of <span class="highlight">JavaScript</span>
+            JS Basics: Important Concepts of <span class="highlight">JavaScript</span><span id="about">i</span>
         </h1>
         <h2><span class="highlight">JAVASCRIPT,</span> <span class="highlight red">NOT "JAVA"</span></h4>
     </header>
 
+    <nav>
+        <ul id="nav-menu">
+            <li><a class="menu-item" href="#variable-title">Variables</a></li>
+            <li><a class="menu-item" href="#datatype-title">DataType</a></li>
+            <li><a class="menu-item" href="#function-title">Function</a></li>
+            <li><a class="menu-item" href="#controlflow-title">ControlFlow</a></li>
+            <li><a class="menu-item" href="#array-title">Array</a></li>
+            <li><a class="menu-item" href="#object-title">Object</a></li>
+        </ul>
+    </nav>
     <main>
         <section id="section-intro">
             <h2 class="sectionTitle">What is JS?</h2>
@@ -37,7 +47,7 @@
         <section id="section-variables">
             <h2 class="sectionTitle">Variables & Data Type</h2>
             <div class="innerSection">
-                <h3 class="sectionSubTitle">Variables</h3>
+                <h3 class="sectionSubTitle" id="variable-title">Variables</h3>
                 <p class="sectionPoint">
                     A variable is a named storage location in a computer's memory that holds a value. It acts as a container for data that can be referenced and 
                     manipulated throughtout a program's execution.
@@ -50,13 +60,16 @@
                     A variable can be defined using any of the following keywords:
                 </p>
                 <ul class="items">
-                        <li><b>var:</b> Creates a variable whose value can be changed. It was used in older version of JS, should be avoided.</li>
-                        <li><b>let:</b> Creates a variable whose value can be changed. It is the morder way to define a variable.</li>
-                        <li><b>const:</b> Creates a variable whose value <b>cannot</b> be changed</li>
-                    </ul>
+                    <li><b>var:</b> Creates a variable whose value can be changed. It was used in older version of JS, should be avoided.</li>
+                    <li><b>let:</b> Creates a variable whose value can be changed. It is the morder way to define a variable.</li>
+                    <li><b>const:</b> Creates a variable whose value <b>cannot</b> be changed</li>
+                </ul>
+                <p class="sectionPoint">
+                    Variable name cannot be a keyword.
+                </p>
             </div>
             <div class="innerSection">
-                <h3 class="sectionSubTitle">Data Types</h3>
+                <h3 class="sectionSubTitle" id="datatype-title">Data Types</h3>
                 <p class="sectionPoint">
                     While dealing with data, your computer needs to know the type of data it is dealing with.
                 </p>
@@ -81,11 +94,233 @@
             </div>
         </section>
 
+        <section id="section-controlFlow-functions">
+            <h2 class="sectionTitle">Functions and Control Flow</h2>
+            <div class="innerSection">
+                <h3 class="sectionSubTitle" id="function-title">Functions</h3>
+                <p class="sectionPoint">
+                    Functions are self-contained block of code designed to perform a specific task
+                </p>
+                <p class="sectionPoint">
+                    Functions allows you to define a piece of code once and then execute it multiple times throughout your program by "calling" the function, avoiding code duplication (DRY - Don't Repeat Yourself principle).
+                </p>
+                <p class="sectionPoint">
+                    Functions can accept input values, known as parameters.
+                </p>
+                <p class="sectionPoint">
+                    Functions are defined by using <b>"function"</b> keyword.
+                </p>
+
+                <div class="codeExampleContainer">
+                    <p class="codeExample codeComment">
+                        /* Syntax to define a function */
+                    </p>
+                    <p class="codeExample">
+                        <span class="codeHighlight">function</span> &lt;Function Name&gt;(parameter list) &#123 <!-- opening curly bracket -->
+                    </p>
+                    <p class="codeExample codeComment">
+                        // Function body
+                    </p>
+                    <p class="codeExample">
+                    &#125 <!-- closing curly bracket -->
+                    </p>
+                </div>
+
+                <p class="sectionPoint">
+                    Function name cannot be a keyword.
+                </p>
+                <p class="sectionPoint">
+                    Function can accept <b>zero</b> or more parameters.
+                </p>
+                <p class="sectionPoint">
+                    Functions can return values.
+                </p>
+                <p class="sectionPoint">
+                    In JavaScript, <span class="highlight">"{}"</span> are very important, they define the scope of function or code block (like if-else, loops, try-catch, etc).
+                </p>
+
+                <div class="multiCodeExample">
+                    <div class="codeExampleContainer">
+                        <p class="codeExample codeComment">/* Function with paramters */</p>
+                        <p class="codeExample">function greet(name) &#123</p>
+                        <p class="codeExample">&emsp; console.log(`Hello, $&#123name&#125 !!`)</p>
+                        <p class="codeExample">&#125</p>
+                    </div>
+
+                    <div class="codeExampleContainer">
+                        <p class="codeExample codeComment">/* Function without paramters */</p>
+                        <p class="codeExample">function greet() &#123</p>
+                        <p class="codeExample">&emsp; console.log(`Hello, good morning!)</p>
+                        <p class="codeExample">&#125</p>
+                    </div>
+
+                    <div class="codeExampleContainer">
+                        <p class="codeExample codeComment">/* Function returning a value */</p>
+                        <p class="codeExample">function getSquare(num) &#123</p>
+                        <p class="codeExample">&emsp; let sq = num * num;</p>
+                        <p class="codeExample">&emsp; return sq;</p>
+                        <p class="codeExample">&#125</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="innerSection">
+                <h3 class="sectionSubTitle" id="controlflow-title">
+                    Control Flow
+                </h3>
+                <p class="sectionPoint">
+                    While writing code, many time we have to execute different code based on some condition, parameter, response, error code, etc.
+                </p>
+                <p class="sectionPoint">Control flow in programming refers to the order in which a computer executes the statements and instructions within a program.</p>
+                <p class="sectionPoint">By default, code typically executes sequentially from the first line to the last.</p>
+                <p class="sectionPoint">However, control flow structures allow programmers to alter this default order, enabling programs to make decisions, repeat actions, and handle different scenarios.</p>
+
+                <h4>Conditional Statement:</h4>
+                <h5>if-else:</h5>
+                <p class="sectionPoint">Let execute one code block if the condition is <i>true</i> and other if condition is <i>false</i></p>
+                <div class="codeExampleContainer">
+                    <p class="codeExample">if(num % 3 === 0) &#123</p>
+                    <p class="codeExample codeComment">&emsp; // condition is true</p>
+                    <p class="codeExample">&emsp; console.log("Number is divisible by 3");</p>
+                    <p class="codeExample">&#125 else &#123</p>
+                    <p class="codeExample codeComment">&emsp; // condition is false</p>
+                    <p class="codeExample">&emsp; console.log("Number is not divisible by 3");</p>
+                    <p class="codeExample">&#125</p>
+                </div>
+
+                <h5>else-if:</h5>
+                <p class="sectionPoint">It allows you to chain multiple if-else block.</p>
+                <div class="codeExampleContainer">
+                    <p class="codeExample">if(num % 3 === 0) &#123</p>
+                    <p class="codeExample codeComment">&emsp; // first condition is true</p>
+                    <p class="codeExample">&emsp; console.log("Number is divisible by 3");</p>
+                    <p class="codeExample">&#125 else if(num % 5 === 0) &#123</p>
+                    <p class="codeExample codeComment">&emsp; // second condition is true</p>
+                    <p class="codeExample">&emsp; console.log("Number is divisible by 5");</p>
+                    <p class="codeExample">&#125 else if(num % 7 === 0) &#123</p>
+                    <p class="codeExample codeComment">&emsp; // third condition is true</p>
+                    <p class="codeExample">&emsp; console.log("Number is divisible by 7");</p>
+                    <p class="codeExample">&#125 else &#123</p>
+                    <p class="codeExample codeComment">&emsp; // none of the condition is true</p>
+                    <p class="codeExample">&emsp; console.log("Number is not divisible by 3,5 or 7.");</p>
+                    <p class="codeExample">&#125</p>
+                </div>
+                <p class="sectionPoint">
+                    Compilier will start testing from first condition and keep checking the if conditions until it finds a <b>true</b> condition, and execute the code block for that condition.
+                </p>
+                <p class="sectionPoint">Once a <b>true</b> condition is found, compilier will skip all other if conditions and else block</p>
+                <p class="sectionPoint">If none of the if condition is true then else block will be executed.</p>
+                <p class="sectionPoint">Else block is not mandatory.</p>
+
+                <h5>switch-case:</h5>
+                <p class="sectionPoint">
+                    Provides a way to execute different blocks of code based on the value of a single variable or expression.
+                </p>
+                <div class="codeExampleContainer">
+                    <p class="codeExample">switch(expr) &#123</p>
+                    <p class="codeExample">&emsp;case "Sunday":</p>
+                    <p class="codeExample">&emsp;&emsp;console.log("yay!!");</p>
+                    <p class="codeExample">&emsp;&emsp;break;</p>
+                    <p class="codeExample">&emsp;case "Saturday":</p>
+                    <p class="codeExample">&emsp;&emsp;console.log("party!!!");</p>
+                    <p class="codeExample">&emsp;&emsp;break;</p>
+                    <p class="codeExample">&emsp;case "Monday":</p>
+                    <p class="codeExample">&emsp;case "Tuesday":</p>
+                    <p class="codeExample">&emsp;case "Wednesday":</p>
+                    <p class="codeExample">&emsp;case "Thursday":</p>
+                    <p class="codeExample">&emsp;&emsp;console.log("Ohh Noooooo!!!");</p>
+                    <p class="codeExample">&emsp;&emsp;break;</p>
+                    <p class="codeExample">&emsp;case "Friday":</p>
+                    <p class="codeExample">&emsp;&emsp;console.log("Almost there!!!");</p>
+                    <p class="codeExample">&emsp;&emsp;break;</p>
+                    <p class="codeExample">&emsp;default:</p>
+                    <p class="codeExample">&emsp;&emsp;console.log("Invalid day");</p>
+                    <p class="codeExample">&#125</p>
+                </div>
+
+                <h4>for-loop:</h4>
+                <p class="sectionPoint">Iterate over a sequence (like a list or array) for a specific number of times.</p>
+                <div class="multiCodeExample">
+                    <div class="codeExampleContainer">
+                        <p class="codeComment">// for-loop syntax </p>
+                        <p class="codeExample">for(initialize looping variable; Termination condition; increment/decrement) &#123</p>
+                        <p class="codeExample">&emsp;// code block you want to repeat</p>
+                        <p class="codeExample">&#125</p>
+                    </div>
+                    <div class="codeExampleContainer">
+                        <p class="codeComment">// for-loop to print the multiplication table of 7 </p>
+                        <p class="codeExample">for(let i=1; i &lt; 11; i++) &#123</p>
+                        <p class="codeExample">&emsp;console.log(`7 times $&#123i&#125 = ${7*i}`);</p>
+                        <p class="codeExample">&#125</p>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="array-object">
+            <h2 class="sectionTitle">Arrays & Objects</h2>
+            <div class="innerSection">
+                <h3 class="sectionSubTitle" id="array-title">Array</h3>
+                <p class="sectionPoint">An array is a single variable used to store an ordered collection of multiple values.</p>
+                <p class="sectionPoint">These values, known as elements, can be of any data type (numbers, strings, booleans, objects, or even other arrays).</p>
+                <p class="sectionPoint">Each element in an array is assigned a numeric index, starting from 0 for the first element</p>
+                <p class="sectionPoint">Elements are accessed using these indices enclosed in square brackets (e.g., myArray[0]).</p>
+                <p class="sectionPoint">Arrays can be created using square brackets []</p>
+
+                <div class="multiCodeExample">
+                    <div class="codeExampleContainer">
+                        <p class="codeExample">const fruits = ["Apple", "Banana", "Orange"]; <span class="codeComment">// Array of String</span></p>
+                        <p class="codeExample">const number = [11, 45, -31, 0, 99, 10000, -10000]; <span class="codeComment">// Array of Numbers</span></p>
+                        <p class="codeExample">const objects = [{}, {}, {}, {}];<span class="codeComment">// Array of Objects</span></p>
+                    </div>
+                </div>
+
+                <div class="hands-on">
+                    <h5>Practise: </h5>
+                    <p class="practise-item">Create an array of your favorite colors.</p>
+                    <p class="practise-item">Add (push) a new color to the end.</p>
+                    <p class="practise-item">Remove (pop) the last color.</p>
+                    <p class="practise-item">Loop through the array and print each color.</p>
+                </div>
+                
+            </div>
+
+            <div class="innerSection">
+                <h3 class="sectionSubTitle" id="object-title">Objects</h3>
+                <p class="sectionPoint">Objects are used to store collection of related data(property) and functionality(behaviour).</p>
+                <p class="sectionPoint">Unordered collections of key-value pairs.</p>
+                <p class="sectionPoint">Objects can be created using &#123 &#125</p>
+
+                <div class="codeExampleContainer">
+                    <p class="codeComment">// Person Object with some properties(data) and a behaviour(function)</p>
+                    <p class="codeExample">const person = &#123</p>
+                    <p class="codeExample">&emsp;name="John";</p>
+                    <p class="codeExample">&emsp;age=37;</p>
+                    <p class="codeExample">&emsp;email="John@hotmail.com";</p>
+                    <p class="codeExample">&emsp;function greet() &#123</p>
+                    <p class="codeExample">&emsp;&emsp;console.log("John says HI!!!");</p>
+                    <p class="codeExample">&emsp;&#125</p>
+                    <p class="codeExample">&#125</p>
+                </div>
+
+                <p class="sectionPoint">Object properties can be access using dot(.) notation (eg: person.name)</p>
+                <p class="sectionPoint">JSON: JavaScript Object Notation, is a very popular formate for sending/receiving data from an API.</p>
+                <div class="hands-on">
+                    <h5>Practise: </h5>
+                    <p class="practise-item">Create an object representing a book (title, author, pages, isRead).</p>
+                    <p class="practise-item">Access and print the book's title and author.</p>
+                    <p class="practise-item">Change the isRead status</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAB and Code Editor -->
         <section id="codeEditor" class="">
             <div id="input">
                 <label id="editorLabel" for="editor">JS Code Editor:</label>
                 <textarea name="editor" id="editor"></textarea>
-                <p class="button" id="codeSubmit">Submit</p>
+                <p class="button" id="codeSubmit">Run</p>
             </div>
             <div id="output">
                 <p>Output</p>
@@ -99,6 +334,9 @@
         </div>
     </main>
 
+    <footer>
+        © Created By Prashant Sharma
+    </footer>
     <script src="script/main.js"></script>
 </body>
 </html>

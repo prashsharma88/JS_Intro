@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
-    --main-bg-color: #DCC5B2;
-    --section-bg-color: #F1EFEC;
-    --highlight-bg-color: #FFF085;
+    --main-bg-color: #EFEEEA;
+    --section-bg-color: #FFF;
+    --highlight-bg-color: #efd81b;
     --border-radius-small: 10px;
     --border-radius-medium: 15px;
     --code-container-bg-color: gray;
@@ -13,7 +16,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Saira", sans-serif;
+    font-family: "Montserrat", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -25,6 +32,57 @@ body {
 
 header {
     text-align: center;
+    background-color: #4DA8DA;
+    color: #FFF;
+    padding: 20px;
+    border-radius: var(--border-radius-medium);
+}
+
+#nav-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 50px;
+    list-style: none;
+    gap: 20px;
+}
+
+.menu-item {
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+
+.menu-item:visited {
+    color: black
+}
+
+.menu-item:hover {
+    text-decoration: underline;
+}
+
+
+#about {
+    color: #393E46;
+    float: right;
+    border: 4px solid #393E46;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+footer {
+    text-align: center;
+    background-color: #4DA8DA;
+    color: #FFF;
+    padding: 20px;
+    border-radius: var(--border-radius-medium);
+    margin-top: 30px;
 }
 
 .green {
@@ -53,6 +111,7 @@ section {
     text-align: center;
     padding-bottom: 20px;
     text-decoration: underline;
+    color: #483AA0;
 }
 
 .sectionPoint {
@@ -60,7 +119,7 @@ section {
 }
 
 .sectionPoint::before {
-    content: "◦ "
+    content: "○ ";
 }
 
 .codeExampleContainer {
@@ -91,7 +150,7 @@ section {
 #editor {
     display: block;
     padding: 15px;
-    font-size: 1.1rem;
+    font-size: 0.8rem;
     width: 200px;
     height: 200px;
 }
@@ -141,7 +200,7 @@ section {
     padding: 10px;
     width: 200px;
     height: 200px;
-    font-size: 1.1rem;
+    font-size: 0.8rem;
 }
 
 #FAB-div {
@@ -183,4 +242,31 @@ section {
 
 .show {
     display: flex !important;
+}
+
+.codeHighlight {
+    color: #A4CCD9;
+}
+
+.multiCodeExample {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px 0;
+    gap: 30px
+}
+
+.hands-on {
+    background-color: #B5C0D0;
+    padding: 10px 10px;
+    border-radius: var(--border-radius-medium);
+    width: fit-content;
+    color: #FFF;
+}
+
+.practise-item {
+    font-size: 0.7rem;
+}
+.practise-item::before {
+    content: '- ';
 }
