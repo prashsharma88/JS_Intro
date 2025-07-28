@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <link rel="icon" href="./public/js.png" type="image/jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&family=Share+Tech&display=swap" rel="stylesheet">
+    <title>JS Refreher</title>
+</head>
+<body>
+    <header>
+        <h1 id="pageTitle">
+            JS Refresher: Important Concepts of <span class="highlight">JavaScript</span>
+        </h1>
+        <h2><span class="highlight">JAVASCRIPT,</span> <span class="highlight red">NOT "JAVA"</span></h4>
+    </header>
+
+    <main>
+        <section id="section-intro">
+            <h2 class="sectionTitle">What is JS?</h2>
+            <p class="sectionPoint">
+                JS is a scripting (programming) language that allows you to create dynamically create/update content.
+            </p>
+            <p class="sectionPoint">
+                JS is very different from JAVA programming language. JAVA is Object Oriented <b>Programming</b> language where as JavaScript is a <b>Scripting</b> language.
+                <span class="highlight red">Never get confused between them, they are completely different things.</span> 
+            </p>
+            <p class="sectionPoint">
+                JS is dynamically typed programming language.
+            </p>
+        </section>
+
+        <section id="section-variables">
+            <h2 class="sectionTitle">Variables & Data Type</h2>
+            <div class="innerSection">
+                <h3 class="sectionSubTitle">Variables</h3>
+                <p class="sectionPoint">
+                    A variable is a named storage location in a computer's memory that holds a value. It acts as a container for data that can be referenced and 
+                    manipulated throughtout a program's execution.
+                </p>
+                <div class="codeExampleContainer">
+                    <p class="codeExample">let x = 10; <span class="codeComment">// defining a variable "x" and assigning value to it.</span></p>
+                    <p class="codeExample">x = x + 10; <span class="codeComment">// updating the value of "x" by adding 10.</span> </p>
+                </div>
+                <p class="sectionPoint">
+                    A variable can be defined using any of the following keywords:
+                </p>
+                <ul class="items">
+                        <li><b>var:</b> Creates a variable whose value can be changed. It was used in older version of JS, should be avoided.</li>
+                        <li><b>let:</b> Creates a variable whose value can be changed. It is the morder way to define a variable.</li>
+                        <li><b>const:</b> Creates a variable whose value <b>cannot</b> be changed</li>
+                    </ul>
+            </div>
+            <div class="innerSection">
+                <h3 class="sectionSubTitle">Data Types</h3>
+                <p class="sectionPoint">
+                    While dealing with data, your computer needs to know the type of data it is dealing with.
+                </p>
+                <p class="sectionPoint">
+                    Some Common data types are:
+                </p>
+                <ul class="items">
+                    <li><b>Numbers:</b> integer (30, -40, 50), decimals (19.11, 7.9)</li>
+                    <li><b>Strings:</b> "Hello World", "s", "Strings can be as long as you like"</li>
+                    <li><b>Booleans:</b> True or False</li>
+                </ul>
+            </div>
+            <div class="innerSection">
+                <h3 class="sectionSubTitle">
+                    What can we store in variable
+                </h3>
+                <p class="sectionPoint">Values that can be stored in a variable can be categorized into 2 categories</p>
+                <ul class="items">
+                    <li><b>Simple Value:</b> Like integer, String or Booleans</li>
+                    <li><b>Reference:</b> An address to something else, like an Array, Object or Function</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="codeEditor" class="">
+            <div id="input">
+                <label id="editorLabel" for="editor">JS Code Editor:</label>
+                <textarea name="editor" id="editor"></textarea>
+                <p class="button" id="codeSubmit">Submit</p>
+            </div>
+            <div id="output">
+                <p>Output</p>
+                <div id="outputDiv"></div>
+            </div>
+        </section>
+        <div id="FAB-div">
+            <p id="FAB">
+                &lt;/&gt;
+            </p>
+        </div>
+    </main>
+
+    <script src="script/main.js"></script>
+</body>
+</html>

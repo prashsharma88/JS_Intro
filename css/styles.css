@@ -1,0 +1,186 @@
+:root {
+    --main-bg-color: #DCC5B2;
+    --section-bg-color: #F1EFEC;
+    --highlight-bg-color: #FFF085;
+    --border-radius-small: 10px;
+    --border-radius-medium: 15px;
+    --code-container-bg-color: gray;
+    --code-font-color: #FFF;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Saira", sans-serif;
+}
+
+body {
+    width: 80%;
+    margin: 0 auto;
+    background-color: var(--main-bg-color);
+    padding: 10px;
+}
+
+header {
+    text-align: center;
+}
+
+.green {
+    background-color: lightgreen !important;
+}
+
+.red {
+    background-color: lightcoral !important;
+    text-decoration: underline;
+}
+
+.highlight {
+    background-color: var(--highlight-bg-color);
+    padding: 0 5px;
+    border-radius: var(--border-radius-small);
+}
+
+section {
+    background-color: var(--section-bg-color);
+    border-radius: var(--border-radius-medium);
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.sectionTitle {
+    text-align: center;
+    padding-bottom: 20px;
+    text-decoration: underline;
+}
+
+.sectionPoint {
+    padding-bottom: 10px;
+}
+
+.sectionPoint::before {
+    content: "◦ "
+}
+
+.codeExampleContainer {
+    width: fit-content;
+    padding: 10px;
+    background-color: var(--code-container-bg-color);
+    color: var(--code-font-color);
+    border-radius: var(--border-radius-medium);
+    font-size: 0.7rem;
+}
+.codeComment {
+    color: #3C3D37
+}
+
+.items > li {
+    padding-left: 40px;
+    list-style: none;
+}
+
+.innerSection {
+    margin-top: 20px;
+}
+
+#editorLabel {
+    display: block;
+}
+
+#editor {
+    display: block;
+    padding: 15px;
+    font-size: 1.1rem;
+    width: 200px;
+    height: 200px;
+}
+
+.button {
+    padding: 10px;
+    background-color: #027bff;
+    width: fit-content;
+    margin-top: 10px;
+    border-radius: var(--border-radius-small);
+    font-size: 0.8rem;
+    color: #FFF;
+    cursor: pointer;
+}
+
+#codeEditor {
+    background-color: #98e8b9;
+    display: none;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+    position: fixed;
+    bottom: 40px;
+    right: 120px;
+    z-index: 100;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.33);
+}
+
+#codeEditor > div{
+    flex-basis: 50%;
+    padding: 10px;
+}
+
+#output {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    justify-content: flex-start;
+
+}
+
+#outputDiv {
+    background-color: #000;
+    color: #FFF;
+    width: 100%;
+    height: 80%;
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+    font-size: 1.1rem;
+}
+
+#FAB-div {
+    border: 2px solid transparent;
+    background-color: #027bff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 100;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.33);
+}
+
+#FAB {
+    content: "</>";
+    background-color: #F4F6FF;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    color: #027bff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    font-size: 1.2rem;
+    z-index: 100;
+}
+
+#FAB-div:hover #FAB {
+    background-color: transparent;
+    color:#E2DFD0;
+}
+
+.show {
+    display: flex !important;
+}
