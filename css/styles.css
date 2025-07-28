@@ -340,4 +340,7 @@ figcaption {
     .sectionPoint::before {
         content: "• ";
     }
+    .items > li {
+        padding-left: 15px;
+    }
 }
