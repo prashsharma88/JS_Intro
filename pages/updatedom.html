@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="shortcut icon" href="../public/js.png" type="image/png">
+    <title>JS Basics</title>
+</head>
+<body>
+    <header>
+        <h1 id="pageTitle">
+            JS Basics: Important Concepts of <span class="highlight">JavaScript</span><span id="dynamic-web"><a style="padding: 2px; display: flex" href="../index.html"><img src="../public/home.png" alt="icon"></a></span>
+        </h1>
+        <h2><span class="highlight">JAVASCRIPT,</span> <span class="highlight red">NOT "JAVA"</span></h4>
+    </header>
+
+    <nav>
+        <ul id="nav-menu">
+            <li><a class="menu-item" href="#dom-section">DOM-Tree</a></li>
+            <li><a class="menu-item" href="#document-obj-title">Document-Object</a></li>
+            <li><a class="menu-item" href="#get-element">Get-Element</a></li>
+            <li><a class="menu-item" href="#updating-content">Update-Content</a></li>
+            <li><a class="menu-item" href="#creating-element">Create-Element</a></li>
+            <li><a class="menu-item" href="#event-handling">Event-Handling</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="dom-section">
+            <h2 class="sectionTitle">What is DOM?</h2>
+            <p class="sectionPoint">
+                The <b>Document Object Model (DOM)</b> is a programming interface for web documents, specifically HTML.
+            </p>
+            <p class="sectionPoint">
+                It represents the structure of a document as a logical tree, where each element, attribute, and piece of text in the document is represented as a node in the tree. 
+            </p>
+            <p class="sectionPoint">
+                Through the DOM, developers can dynamically add, remove, and modify elements, change their attributes, update their text content, and apply styles, enabling interactive and dynamic web experiences.
+            </p>
+            <p class="sectionPoin">
+                The DOM organizes the document into a hierarchical tree, with the <span class="highlight green">document</span> object as the root
+            </p>
+            <p class="sectionPoint">
+                It is a <u><b>live tree,</b></u> which means, any update we do in the DOM tree will be reflected on UI (browser) immediately.
+            </p>
+
+            <div class="imgContainer">
+                <figure>
+                    <img src="../public/dom-tree.jpg" alt="document object model of html page">
+                    <figcaption>Image source: https://www.fullstackfoundations.com/blog/html-dom</figcaption>
+                </figure>
+                
+            </div>
+        </section>
+
+        <section id="updating-dom">
+            <h2 class="sectionTitle">
+                Updating DOM using JS
+            </h2>
+
+            <!-- Document Object -->
+            <h3 id="document-obj-title">Document Object</h3>
+            <p class="sectionPoint">
+                To update the HTML page, we can make changes in the DOM tree using the document object.
+            </p>
+            <p class="sectionPoint">
+                Document object has function to access HTML elements in the DOM tree, create and add new HTML element into the DOM tree, update properties of existing/new HTML elements. 
+            </p>
+
+            <!-- Get Element -->
+             <h3 id="get-element">Getting Elements</h3>
+             <p class="sectionPoint">To update an existing element, first we need to get access to that element</p>
+             <p class="sectionPoint">There are many functions in document object that we can use to get a reference(access) to an html element</p>
+             <ul class="items">
+                <li><b>document.getElementById("Element's id"):</b> Returns first html element matching the given ID or null if no element is found</li>
+                 <li><b>document.getElementByClassName("Element's class"):</b> Returns list of elements or null if no element is found</li>
+                 <li><b>document.getElementByTagName("html tag"):</b> Returns list of elements or null if no element is found</li>
+                 <li><b>document.querySelector("css selector")</b>: Returns the first matching html element matching the css selector or null if no element is found</li>
+                 <li><b>document.querySelectorAll("css selector")</b>: Returns list of html elements matching the css selector or null if no element is found</li>
+             </ul>
+
+             <div class="multiCodeExample">
+                <div class="codeExampleContainer">
+                    <p class="codeExample codeComment">// getElementById: h1 with id of pageTitle</p>
+                    <p class="codeExample">const h1Element = document.getElementById("pageTitle");</p>
+                </div>
+
+                <div class="codeExampleContainer">
+                    <p class="codeComment">// querySelector: h1 with id of pageTitle</p>
+                    <p class="codeExample">const h1Element = document.querySelector("#pageTitle")</p>
+                </div>
+             </div>
+
+             <!-- Updating content -->
+              <h3 id="updating-content">Update Content</h3>
+              <p class="sectionPoint">Once you have element's reference, you can change what's inside it.</p>
+              <p class="sectionPoint">To change the content we can use <u>innerHTML</u> property of the html element object</p>
+
+              <div class="codeExampleContainer">
+                <p class="codeComment">// get header and update to content to say "hello world!"</p>
+                <p class="codeExample">const h1Element = document.querySelector("#pageTitle")</p>
+                <p class="codeExample">h1Element.innerHTML = "Hello World!"</p>
+              </div>
+
+              <p class="sectionPoint">
+                To change the styling of html element we can use <u>style</u> property of html element object.
+              </p>
+              <div class="codeExampleContainer">
+                <p class="codeComment">// update background color of footer</p>
+                <p class="codeExample">const footer_element = document.querySelector("footer");</p>
+                <p class="codeExample">footer_element.style.backgroundColor = "red";</p>
+              </div>
+
+              <p class="sectionPoint">
+                Another way to update styling of an element is to add/remove css class.
+              </p>
+              <p class="sectionPoint">
+                To add/remove class we can use <u>classList</u> property of html element. It represents the list of classes of an element.
+              </p>
+
+              <div class="codeExampleContainer">
+                <p class="codeComment">// add hide class to nav element</p>
+                <p class="codeExample">const navElement = document.querySelector("nav");</p>
+                <p class="codeExample">navElement.classList.add("hide");</p>
+              </div>
+
+              <!-- Creating new Element -->
+               <h3 id="creating-element">Create Element</h3>
+               <p class="sectionPoint">
+                To create a new html element we can use <u>createElement</u> method of document object.
+               </p>
+               <p class="sectionPoint">
+                This method will create a new html element and return its reference.
+               </p>
+               <p class="sectionPoint">
+                Once the element is created we can update its properties as per our requirements using above defined ways (and there are many more things that we can do). 
+               </p>
+               <p class="sectionPoint">
+                <b>Just by creating the element does not make it visible on UI.</b> Remember that DOM tree represents structure of html page, so we have to add this newly created
+                html element to the DOM tree to make it visible.
+               </p>
+               <p class="sectionPoint">
+                To add the newly created html element to the DOM tree we can <u>appendChild()</u> method of document object.
+               </p>
+
+               <div class="codeExampleContainer">
+                <p class="codeComment">// Create a new heading "Test Heading" and add it below this section</p>
+                <p class="codeExample">const newHeading = document.createElement("h1");</p>
+                <p class="codeExample">newHeading.innerHTML = "Test Heading";</p>
+                <p class="codeExample">newHeading.style.color = "red";</p>
+                <p class="codeComment">// h1 is created, now add it to the page</p>
+                <p class="codeExample">document.querySelector("main").appendChild(newHeading);</p>
+               </div>
+        </section>
+
+        <section id="event-handling">
+            <h2 class="sectionTitle">Event Handling</h2>
+            <p class="sectionPoint">
+                User can interact with the webpage by performing actions like click a button, type into a box, move yoru mouse around, scroll up and down.
+            </p>
+            <p class="sectionPoint">
+                All this actions generate <b>events</b> and we can write code in JS to <u>react (listen or handle)</u> these events. It is called <b>Event Handling</b>.
+            </p>
+            <p class="sectionPoint">
+                We do event handling to make the webpage interactive and dynamic. Without it, webpage would just be static text and images.
+            </p>
+            <p class="sectionPoint">To do event handling we need to perform following steps: </p>
+
+            <ul class="items">
+                <li>1.) Get a reference to the html element (target) on which we want to handle events, like a button or anchor tag.</li>
+                <li>2.) Define the event handler function in which you define what you want to do when the event happens, like when button is clicked open the menu.</li>
+                <li>3.) Attach the event handler to the target element along with the event on which you want to perform the action, like click event, keyboard event.</li>
+            </ul>
+
+            <div class="codeExampleContainer">
+                <p class="codeComment">// add "click" event handler on "footer" and show alert dialog</p>
+                <p class="codeExample">const footerEle = document.querySelector("footer");&emsp;<span class="codeComment">// step 1</span></p>
+                <p class="codeExample">function handleClickEvent() &#123&emsp;&emsp;&emsp;<span class="codeComment">// step 2</span></p>
+                <p class="codeExample">&emsp;console.log("Handling Click Event");</p>
+                <p class="codeExample">&emsp;alert("Footer is clicked !!");</p>
+                <p class="codeExample">&#125</p>
+                <p class="codeExample">footerEle.addEventListener("click", handleClickEvent);&emsp;<span class="codeComment">// step 3</span></p>
+            </div>
+        </section>
+
+
+        <!-- FAB and Code Editor -->
+        <section id="codeEditor" class="">
+            <div id="input">
+                <label id="editorLabel" for="editor">JS Code Editor:</label>
+                <textarea name="editor" id="editor"></textarea>
+                <p class="button" id="codeSubmit">Run</p>
+            </div>
+            <div id="output">
+                <p>Output</p>
+                <div id="outputDiv"></div>
+            </div>
+        </section>
+        <div id="FAB-div">
+            <p id="FAB">
+                &lt;/&gt;
+            </p>
+        </div>
+    </main>
+    
+
+    <footer>
+        <h6>© Created By Prashant Sharma</h6>
+        <h6>Icons are from <a href="https://www.flaticon.com/" rel="noopener" target="_blank">FLATICON</a> website</h6>
+    </footer>
+    <script src="../script/main.js"></script>
+</body>
+</html>
