@@ -55,3 +55,14 @@ console.warn = (...args) => {
 document.getElementById("FAB-div").addEventListener("click", () => {
     document.getElementById("codeEditor").classList.toggle("show");
 })
+
+
+// window.addEventListener("scroll", (event) => {
+//     const l = document.querySelectorAll("section");
+//     [...l].forEach(s => s.style.backgroundColor = getRandomColor())
+// })
+
+// function getRandomColor() {
+//     const hex = Math.floor(Math.random() * 16777215).toString(16);
+//     return "#" + hex.padStart(6, '0');
+// }
